@@ -22,7 +22,7 @@ const Dog = ({ message, isFetching, error, dispatch }) => {
       <img className="dogImages" src={message} />
       <div>
         <button className="button" onClick={handleClick}>
-          Get another dog!
+          <span>Get another dog!</span>
         </button>
       </div>
     </div>
