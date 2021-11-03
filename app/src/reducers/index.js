@@ -1,9 +1,6 @@
 import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR } from "./../actions";
 const initialState = {
-  message: {
-    breed: "mountain bernese",
-    img: "https://images.dog.ceo/breeds/mountain-bernese/n02107683_1737.jpg",
-  },
+  message: "https://images.dog.ceo/breeds/mountain-bernese/n02107683_1737.jpg",
   isFetching: false,
   error: "",
 };

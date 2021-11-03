@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-
+import { getDog } from "../actions";
 const Dog = ({ message, isFetching, error, dispatch }) => {
+  useEffect(() => {
+    dispatch(getDog());
+  }, []);
+
   if (error) {
     return <h2>We got an error: {error}</h2>;
   }
@@ -9,9 +13,18 @@ const Dog = ({ message, isFetching, error, dispatch }) => {
   if (isFetching) {
     return <h2>Fetching dog for ya!</h2>;
   }
+
+  const handleClick = (e) => {
+    dispatch(getDog());
+  };
   return (
     <div>
-      <h2>Say Hi to: {}</h2>
+      <img className="dogImages" src={message} />
+      <div>
+        <button className="button" onClick={handleClick}>
+          Get another dog!
+        </button>
+      </div>
     </div>
   );
 };
